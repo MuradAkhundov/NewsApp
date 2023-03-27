@@ -8,6 +8,18 @@
 
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/homeToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/aqua"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="                          FeedNews"/>
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
@@ -17,7 +29,7 @@
         android:layout_marginEnd="@dimen/_10sdp"
         android:iconifiedByDefault="false"
         android:queryHint="Search Here ..."
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeToolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/search_bg" />
@@ -25,8 +37,8 @@
         android:id="@+id/textViewDiscover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:fontFamily="@font/abhaya_libre"
         android:text="Discover"
         android:textColor="@color/black"
@@ -38,12 +50,13 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewDiscover">
+        app:layout_constraintTop_toBottomOf="@id/textViewDiscover"
+        android:layout_marginTop="@dimen/_5sdp">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -57,6 +70,7 @@
             app:layout_constraintTop_toBottomOf="@id/textViewDiscover" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

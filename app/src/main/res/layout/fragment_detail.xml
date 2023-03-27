@@ -7,14 +7,24 @@
     tools:context=".ui.fragments.DetailFragment">
 
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/aqua"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="                          FeedNews"/>
 
     <ImageView
         android:id="@+id/imageNews"
         android:layout_width="@dimen/_300sdp"
         android:layout_height="@dimen/_150sdp"
         android:src="@color/aqua"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailToolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_15sdp"/>
@@ -24,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Topic"
+        android:fontFamily="@font/abhaya_libre"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/imageNews"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +47,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewSite"
         android:text="See on original source : "
+        android:fontFamily="@font/abhaya_libre"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@id/topicText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -45,9 +59,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_300sdp"
         app:cardElevation="4dp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:cardCornerRadius="@dimen/_4sdp"
-        app:layout_constraintTop_toBottomOf="@id/topicText">
+        app:layout_constraintTop_toBottomOf="@id/textViewSite">
 
         <ProgressBar
             android:layout_width="@dimen/_25sdp"
@@ -56,14 +70,16 @@
             android:id="@+id/webViewLoader"/>
 
         <WebView
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/webView"/>
+            android:id="@+id/webView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Click here to open source"
+            android:fontFamily="@font/abhaya_libre"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             android:textColor="@color/black"
